@@ -1,4 +1,6 @@
-﻿Vuelos
+﻿Esta es la base de datos de los servicios
+
+Vuelos
 Tabla vuelos
 CREATE TABLE [dbo].[vuelos](
 	[id] [int] IDENTITY(1,1) NOT NULL,
