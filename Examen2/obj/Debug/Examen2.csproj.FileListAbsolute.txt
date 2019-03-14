@@ -1,0 +1,7 @@
+c:\users\fiorella salazar\source\repos\Examen2\Examen2\bin\Examen2.dll.config
+c:\users\fiorella salazar\source\repos\Examen2\Examen2\bin\Examen2.dll
+c:\users\fiorella salazar\source\repos\Examen2\Examen2\bin\Examen2.pdb
+c:\users\fiorella salazar\source\repos\Examen2\Examen2\obj\Debug\Examen2.csprojResolveAssemblyReference.cache
+c:\users\fiorella salazar\source\repos\Examen2\Examen2\obj\Debug\Examen2.csproj.CoreCompileInputs.cache
+c:\users\fiorella salazar\source\repos\Examen2\Examen2\obj\Debug\Examen2.dll
+c:\users\fiorella salazar\source\repos\Examen2\Examen2\obj\Debug\Examen2.pdb
