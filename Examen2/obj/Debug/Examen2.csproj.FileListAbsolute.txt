@@ -11,3 +11,10 @@ C:\Users\Alejandro\Desktop\Examen2-master\Examen2\bin\Examen2.pdb
 C:\Users\Alejandro\Desktop\Examen2-master\Examen2\obj\Debug\Examen2.csproj.CoreCompileInputs.cache
 C:\Users\Alejandro\Desktop\Examen2-master\Examen2\obj\Debug\Examen2.dll
 C:\Users\Alejandro\Desktop\Examen2-master\Examen2\obj\Debug\Examen2.pdb
+C:\Users\i_fel\source\repos\Examen2\Examen2\obj\Debug\Examen2.csprojAssemblyReference.cache
+C:\Users\i_fel\source\repos\Examen2\Examen2\obj\Debug\Examen2.csproj.CoreCompileInputs.cache
+C:\Users\i_fel\source\repos\Examen2\Examen2\obj\Debug\Examen2.dll
+C:\Users\i_fel\source\repos\Examen2\Examen2\obj\Debug\Examen2.pdb
+C:\Users\i_fel\source\repos\Examen2\Examen2\bin\Examen2.dll.config
+C:\Users\i_fel\source\repos\Examen2\Examen2\bin\Examen2.dll
+C:\Users\i_fel\source\repos\Examen2\Examen2\bin\Examen2.pdb
