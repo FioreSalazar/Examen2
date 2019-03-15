@@ -4,14 +4,13 @@ using System.Data.SqlClient;
 
 namespace Examen2.DAO
 {
-
     public class HotelDAO
     {
-        private string CadenaConexion = "Data Source=DESKTOP-TRIHFE6;Initial Catalog=Rentivel;Integrated Security=true;";
+        private string CadenaConexion = "Data Source=FIORELLA\\FIORELLASQL;Initial Catalog=Rentivel;Integrated Security=true;";
 
         public Hotel Crear(Hotel hotelACrear)
         {
-            Hotel hotelCreada = null;
+            Hotel hotelCreado = null;
             string sql = "INSERT INTO hoteles (nombre, telefono, ubicacion, tipoHabitacion, precio) " +
                 "values(@nombre, @telefono, @ubicacion, @tipoHabitacion, @precio)";
             using (SqlConnection conexion = new SqlConnection(CadenaConexion))
@@ -27,8 +26,8 @@ namespace Examen2.DAO
                     comando.ExecuteNonQuery();
                 }
             }
-            hotelCreada = Obtener(hotelACrear.Id);
-            return hotelCreada;
+            hotelCreado = Obtener(hotelACrear.Id);
+            return hotelCreado;
         }
 
         public Hotel Obtener(int id)

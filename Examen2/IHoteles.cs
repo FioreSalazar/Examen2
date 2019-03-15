@@ -31,5 +31,8 @@ namespace Examen2
         [OperationContract]
         [WebInvoke(Method = "DELETE", UriTemplate = "Hoteles/{id}", ResponseFormat = WebMessageFormat.Json)]
         void EliminarHotel(string id);
+
+        [WebInvoke(Method = "OPTIONS", UriTemplate = "*")]
+        void Options();
     }
 }

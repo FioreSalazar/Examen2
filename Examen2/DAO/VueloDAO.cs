@@ -4,35 +4,36 @@ using System.Data.SqlClient;
 
 namespace Examen2.DAO
 {
-    public class CarroDAO
+    public class VueloDAO
     {
         private string CadenaConexion = "Data Source=FIORELLA\\FIORELLASQL;Initial Catalog=Rentivel;Integrated Security=true;";
 
-        public Carro Crear(Carro carroACrear)
+        public Vuelo Crear(Vuelo vueloACrear)
         {
-            Carro carroCreado = null;
-            string sql = "INSERT INTO carros (marca, modelo, categoria, color, precio) " +
-                "values(@marca, @modelo, @categoria, @color, @precio)";
+           Vuelo vueloCreado = null;
+            string sql = "INSERT INTO vuelos (origen, destino, agencia, categoria, precio) " +
+                "values(@origen, @destino, @agencia, @categoria, @precio)";
             using (SqlConnection conexion = new SqlConnection(CadenaConexion))
             {
                 conexion.Open();
                 using (SqlCommand comando = new SqlCommand(sql, conexion))
                 {
-                    comando.Parameters.Add(new SqlParameter("@marca", carroACrear.Marca));
-                    comando.Parameters.Add(new SqlParameter("@modelo", carroACrear.Modelo));
-                    comando.Parameters.Add(new SqlParameter("@categoria", carroACrear.Categoria));
-                    comando.Parameters.Add(new SqlParameter("@color", carroACrear.Color));
-                    comando.Parameters.Add(new SqlParameter("@precio", carroACrear.Precio));
+                    comando.Parameters.Add(new SqlParameter("@origen", vueloACrear.Origen));
+                    comando.Parameters.Add(new SqlParameter("@destino", vueloACrear.Destino));
+                    comando.Parameters.Add(new SqlParameter("@agencia", vueloACrear.Agencia));
+                    comando.Parameters.Add(new SqlParameter("@categoria", vueloACrear.Categoria));
+                    comando.Parameters.Add(new SqlParameter("@precio", vueloACrear.Precio));
                     comando.ExecuteNonQuery();
                 }
             }
-            carroCreado = Obtener(carroACrear.Id);
-            return carroCreado;
+            vueloCreado = Obtener(vueloACrear.Id);
+            return vueloCreado;
         }
-        public Carro Obtener(int id)
+
+        public Vuelo Obtener(int id)
         {
-            Carro carroEncontrado = null;
-            string sql = "SELECT * FROM carros WHERE id = @id";
+            Vuelo vueloEncontrado = null;
+            string sql = "SELECT * FROM vuelos WHERE id = @id";
             using (SqlConnection conexion = new SqlConnection(CadenaConexion))
             {
                 conexion.Open();
@@ -43,13 +44,13 @@ namespace Examen2.DAO
                     {
                         if (resultado.Read())
                         {
-                            carroEncontrado = new Carro()
+                            vueloEncontrado = new Vuelo()
                             {
                                 Id = (int)resultado["id"],
-                                Marca = (string)resultado["marca"],
-                                Modelo= (string)resultado["modelo"],
+                                Origen = (string)resultado["origen"],
+                                Destino = (string)resultado["destino"],
+                                Agencia = (string)resultado["agencia"],
                                 Categoria = (string)resultado["categoria"],
-                                Color = (string)resultado["color"],
                                 Precio = (int)resultado["precio"]
                             };
                         }
@@ -57,32 +58,34 @@ namespace Examen2.DAO
                 }
 
             }
-            return carroEncontrado;
+            return vueloEncontrado;
         }
-        public Carro Modificar(Carro carroAModificar)
+
+        public Vuelo Modificar(Vuelo vueloAModificar)
         {
-            Carro carroModificado = null;
-            string sql = "UPDATE carros SET marca = @marca, modelo = @modelo, categoria = @categoria,color=@color, precio = @precio where id = @id";
+            Vuelo vueloModificado = null;
+            string sql = "UPDATE vuelos SET origen= @origen, destino = @destino, agencia = @agencia, categoria= @categoria, precio = @precio where id = @id";
             using (SqlConnection conexion = new SqlConnection(CadenaConexion))
             {
                 conexion.Open();
                 using (SqlCommand comando = new SqlCommand(sql, conexion))
                 {
-                    comando.Parameters.Add(new SqlParameter("@marca", carroAModificar.Marca));
-                    comando.Parameters.Add(new SqlParameter("@modelo", carroAModificar.Modelo));
-                    comando.Parameters.Add(new SqlParameter("@categoria", carroAModificar.Categoria));
-                    comando.Parameters.Add(new SqlParameter("@color", carroAModificar.Color));
-                    comando.Parameters.Add(new SqlParameter("@precio", carroAModificar.Precio));
-                    comando.Parameters.Add(new SqlParameter("@id", carroAModificar.Id));
+                    comando.Parameters.Add(new SqlParameter("@origen", vueloAModificar.Origen));
+                    comando.Parameters.Add(new SqlParameter("@destino", vueloAModificar.Destino));
+                    comando.Parameters.Add(new SqlParameter("@agencia", vueloAModificar.Agencia));
+                    comando.Parameters.Add(new SqlParameter("@categoria", vueloAModificar.Categoria));
+                    comando.Parameters.Add(new SqlParameter("@precio", vueloAModificar.Precio));
+                    comando.Parameters.Add(new SqlParameter("@pid", vueloAModificar.Id));
                     comando.ExecuteNonQuery();
                 }
             }
-            carroModificado = Obtener(carroAModificar.Id);
-            return carroModificado;
+            vueloModificado = Obtener(vueloAModificar.Id);
+            return vueloModificado;
         }
+
         public void Eliminar(int Id)
         {
-            string sql = "DELETE FROM carros WHERE id = @id";
+            string sql = "DELETE FROM vuelos WHERE id = @id";
             using (SqlConnection conexion = new SqlConnection(CadenaConexion))
             {
                 conexion.Open();
@@ -93,11 +96,12 @@ namespace Examen2.DAO
                 }
             }
         }
-        public List<Carro> Listar()
+
+        public List<Vuelo> Listar()
         {
-            List<Carro> carrosEncontrados = new List<Carro>();
-           Carro carroEncontrado = null;
-            string sql = "select * from carros";
+            List<Vuelo> vuelosEncontrados = new List<Vuelo>();
+            Vuelo vueloEncontrado = null;
+            string sql = "select * from vuelos";
             using (SqlConnection conexion = new SqlConnection(CadenaConexion))
             {
                 conexion.Open();
@@ -107,54 +111,57 @@ namespace Examen2.DAO
                     {
                         while (resultado.Read())
                         {
-                            carroEncontrado = new Carro()
+                            vueloEncontrado = new Vuelo()
                             {
                                 Id = (int)resultado["id"],
-                                Marca = (string)resultado["marca"],
-                                Modelo = (string)resultado["modelo"],
+                                Origen = (string)resultado["origen"],
+                                Destino = (string)resultado["destino"],
+                                Agencia = (string)resultado["agencia"],
                                 Categoria = (string)resultado["categoria"],
-                                Color = (string)resultado["color"],
                                 Precio = (int)resultado["precio"]
                             };
-                            carrosEncontrados.Add(carroEncontrado);
+                            vuelosEncontrados.Add(vueloEncontrado);
                         }
                     }
                 }
             }
-            return carrosEncontrados;
+            return vuelosEncontrados;
         }
-        public List<Carro> ListarCarrosPorUbicacionCategoria(string marca, string categoria)
+
+        public List<Vuelo> ListarVuelosPorOrigenCategoria(string origen, string categoria)
         {
-            List<Carro> carrosEncontrados = new List<Carro>();
-            Carro carroEncontrado = null;
-            string sql = "SELECT * FROM carros WHERE marca = @marca or categoria = @categoria";
+            List<Vuelo> vuelosEncontrados = new List<Vuelo>();
+            Vuelo vueloEncontrado = null;
+            string sql = "SELECT * FROM vuelos WHERE origen = @origen and categoria = @categoria ";
             using (SqlConnection conexion = new SqlConnection(CadenaConexion))
             {
                 conexion.Open();
                 using (SqlCommand comando = new SqlCommand(sql, conexion))
                 {
-                    comando.Parameters.Add(new SqlParameter("@marca", marca));
+                    comando.Parameters.Add(new SqlParameter("@origen", origen));
                     comando.Parameters.Add(new SqlParameter("@categoria", categoria));
                     using (SqlDataReader resultado = comando.ExecuteReader())
                     {
                         while (resultado.Read())
                         {
-                            carroEncontrado = new Carro()
+                            vueloEncontrado = new Vuelo()
                             {
                                 Id = (int)resultado["id"],
-                                Marca = (string)resultado["marca"],
-                                Modelo = (string)resultado["modelo"],
+                                Origen = (string)resultado["origen"],
+                                Destino = (string)resultado["destino"],
+                                Agencia = (string)resultado["agencia"],
                                 Categoria = (string)resultado["categoria"],
-                                Color = (string)resultado["color"],
                                 Precio = (int)resultado["precio"]
+                               
                             };
-                           carrosEncontrados.Add(carroEncontrado);
+                            vuelosEncontrados.Add(vueloEncontrado);
                         }
                     }
                 }
 
             }
-            return carrosEncontrados;
+            return vuelosEncontrados;
         }
+
     }
 }

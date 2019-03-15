@@ -44,5 +44,10 @@ namespace Examen2
             return hotelDAO.ListarHotelesPorUbicacionHabitacion(ubicacion, tipoHabitacion);
         }
 
+        public void Options()
+        {
+            WebOperationContext.Current.OutgoingResponse.Headers.Add("X-MyHeader", "value");
+            WebOperationContext.Current.OutgoingResponse.Headers.Add("Public", "OPTIONS,POST,GET,PUT,DELETE");
+        }
     }
 }
