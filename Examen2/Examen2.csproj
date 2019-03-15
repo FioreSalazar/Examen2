@@ -61,16 +61,23 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Carros.svc" />
     <Content Include="db.sql" />
     <Content Include="Hoteles.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Carros.svc.cs">
+      <DependentUpon>Carros.svc</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\CarroDAO.cs" />
     <Compile Include="DAO\HotelDAO.cs" />
     <Compile Include="Hoteles.svc.cs">
       <DependentUpon>Hoteles.svc</DependentUpon>
     </Compile>
+    <Compile Include="ICarros.cs" />
     <Compile Include="IHoteles.cs" />
+    <Compile Include="modelos\Carro.cs" />
     <Compile Include="modelos\Hotel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

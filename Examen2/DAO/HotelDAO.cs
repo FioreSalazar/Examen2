@@ -7,7 +7,7 @@ namespace Examen2.DAO
 
     public class HotelDAO
     {
-        private string CadenaConexion = "Data Source=FIORELLA\\FIORELLASQL;Initial Catalog=Hoteles;Integrated Security=true;";
+        private string CadenaConexion = "Data Source=DESKTOP-TRIHFE6;Initial Catalog=Rentivel;Integrated Security=true;";
 
         public Hotel Crear(Hotel hotelACrear)
         {

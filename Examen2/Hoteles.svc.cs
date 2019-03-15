@@ -23,19 +23,19 @@ namespace Examen2
 
         public Hotel CrearHotel(Hotel hotelACrear)
         {
-            Hotel actividadExistente = hotelDAO.Obtener(hotelACrear.Id);
+            Hotel Existente = hotelDAO.Obtener(hotelACrear.Id);
             return hotelDAO.Crear(hotelACrear);
         }
 
         public Hotel ModificarHotel(Hotel hotelAModificar)
         {
-            Hotel actividadExistente = hotelDAO.Obtener(hotelAModificar.Id);
+            Hotel Existente = hotelDAO.Obtener(hotelAModificar.Id);
             return hotelDAO.Modificar(hotelAModificar);
         }
 
         public void EliminarHotel(string id)
         {
-            Hotel actividadExistente = hotelDAO.Obtener(Convert.ToInt32(id));
+            Hotel Existente = hotelDAO.Obtener(Convert.ToInt32(id));
             hotelDAO.Eliminar(Convert.ToInt32(id));
         }
 
