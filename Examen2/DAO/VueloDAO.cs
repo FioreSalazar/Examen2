@@ -6,7 +6,7 @@ namespace Examen2.DAO
 {
     public class VueloDAO
     {
-        private string CadenaConexion = "Data Source=ALTESEIN\\SQLEXPRESS;Initial Catalog=Vuelos;Integrated Security=true;";
+        private string CadenaConexion = "Data Source=FIORELLA\\FIORELLASQL;Initial Catalog=Rentivel;Integrated Security=true;";
 
         public Vuelo Crear(Vuelo vueloACrear)
         {
@@ -152,7 +152,7 @@ namespace Examen2.DAO
                                 Agencia = (string)resultado["agencia"],
                                 Categoria = (string)resultado["categoria"],
                                 Precio = (int)resultado["precio"]
-                               
+
                             };
                             vuelosEncontrados.Add(vueloEncontrado);
                         }

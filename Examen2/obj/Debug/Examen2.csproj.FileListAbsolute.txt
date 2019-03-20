@@ -11,6 +11,7 @@ C:\Users\Alejandro\Desktop\Examen2-master\Examen2\obj\Debug\Examen2.csproj.CoreC
 C:\Users\Alejandro\Desktop\Examen2-master\Examen2\obj\Debug\Examen2.dll
 C:\Users\Alejandro\Desktop\Examen2-master\Examen2\obj\Debug\Examen2.pdb
 C:\Users\fiorella salazar\source\repos\Examen2\Examen2\obj\Debug\Examen2.csprojResolveAssemblyReference.cache
+<<<<<<< HEAD
 C:\Users\i_fel\source\repos\Examen2\Examen2\bin\Examen2.dll.config
 C:\Users\i_fel\source\repos\Examen2\Examen2\bin\Examen2.dll
 C:\Users\i_fel\source\repos\Examen2\Examen2\bin\Examen2.pdb
@@ -18,3 +19,5 @@ C:\Users\i_fel\source\repos\Examen2\Examen2\obj\Debug\Examen2.csproj.CoreCompile
 C:\Users\i_fel\source\repos\Examen2\Examen2\obj\Debug\Examen2.dll
 C:\Users\i_fel\source\repos\Examen2\Examen2\obj\Debug\Examen2.pdb
 C:\Users\i_fel\source\repos\Examen2\Examen2\obj\Debug\Examen2.csprojAssemblyReference.cache
+=======
+>>>>>>> e4bdfdd7efac0e044ced116981442bafd2be040a
