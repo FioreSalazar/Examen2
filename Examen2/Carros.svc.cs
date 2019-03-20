@@ -38,5 +38,11 @@ namespace Examen2
         {
             return carroDAO.ListarCarrosPorUbicacionCategoria(marca, categoria);
         }
+
+        public void Options()
+        {
+            WebOperationContext.Current.OutgoingResponse.Headers.Add("X-MyHeader", "value");
+            WebOperationContext.Current.OutgoingResponse.Headers.Add("Public", "OPTIONS,POST,GET,PUT,DELETE");
+        }
     }
 }

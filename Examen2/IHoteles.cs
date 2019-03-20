@@ -8,9 +8,6 @@ namespace Examen2
     [ServiceContract]
     public interface IHoteles
     {
-        [WebInvoke(Method = "OPTIONS", UriTemplate = "*")]
-        void Options();
-
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "Hoteles", ResponseFormat = WebMessageFormat.Json)]
         List<Hotel> ListarHoteles();
@@ -34,5 +31,8 @@ namespace Examen2
         [OperationContract]
         [WebInvoke(Method = "DELETE", UriTemplate = "Hoteles/{id}", ResponseFormat = WebMessageFormat.Json)]
         void EliminarHotel(string id);
+
+        [WebInvoke(Method = "OPTIONS", UriTemplate = "*")]
+        void Options();
     }
 }

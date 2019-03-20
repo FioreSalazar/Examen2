@@ -31,5 +31,8 @@ namespace Examen2
         [OperationContract]
         [WebInvoke(Method = "DELETE", UriTemplate = "Carros/{id}", ResponseFormat = WebMessageFormat.Json)]
         void EliminarCarro(string id);
+
+        [WebInvoke(Method = "OPTIONS", UriTemplate = "*")]
+        void Options();
     }
 }
