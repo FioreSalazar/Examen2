@@ -56,7 +56,7 @@ $( document ).ready(function() {
         var url = "http://localhost:2144/Vuelos.svc/Vuelos/" + id;
         $.get(url , function( data ) {
                 $(".result")
-                .append('<div><h2><i class="fas fa-plane-departure"></i> ' + data.Origen +'</h2><h2><i class="fas fa-plane-arrival"></i> ' + data.Destino+'</h2><p>' + data.Categoria +' - PRECIO:'+data.Precio+'</p><hr/><label for="text-basic">Fecha de vuelo:</label><input type="date" name="date" id="date" value=""><button class="ui-btn">Reservar</button></div>');
+                .append('<h4>Aerolinia: ' + data.Agencia +'</h4><p><i class="fas fa-plane-departure"></i> Origen: ' + data.Origen +'</p><p><i class="fas fa-plane-arrival"></i> Destino: ' + data.Destino +'</p><p><i class="fas fa-money-bill"></i> Categoria: ' + data.Categoria +'</p><p>Precio: $' + data.Precio +'</p><br><hr/><form action="/action_reservar_vuelo.php" method="post" data-ajax="false"><input type="hidden" name="user" id="user" value="<?php echo $_SESSION['login_user']; ?>"><input type="hidden" name="reserva" id="reserva" value="vuelo'+ data.Id    +'"><input type="hidden" name="total" id="total" value="'+ data.Precio    +'"><label for="text-basic">Fecha de vuelo:</label><input type="date" name="date" id="date" value=""><button class="ui-btn vuelo" type="submit">Reservar</button></form>');
         })
 });
 </script>

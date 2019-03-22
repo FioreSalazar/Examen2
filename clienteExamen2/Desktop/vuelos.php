@@ -18,6 +18,10 @@
             -o-background-size: cover;
             background-size: cover;
         }
+        .hover:hover {
+            background-image: linear-gradient(-30deg, #127ba3, #f75bd0) !important;
+            color:white;
+        }
     </style>
 </head>
 <body>
@@ -71,21 +75,24 @@
                             <div class="form-group">
                                 <label for="Origen">Origen</label>
                                 <select class="form-control" name="Origen">
-                                    <option>Costa Rica, San Jose</option>
-                                    <option>USA, Miami</option>
-                                    <option>Colombia, Medellin</option>
-                                    <option>Peru, Lima</option>
-                                    <option>Mexico, Distrito Federal</option>
+                                    <option>Costa Rica</option>
+                                    <option>Colombia,Medellín</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="Destino">Destino</label>
                                 <select class="form-control" name="Destino">
-                                    <option>Costa Rica, San Jose</option>
-                                    <option>USA, Miami</option>
-                                    <option>Colombia, Medellin</option>
-                                    <option>Peru, Lima</option>
-                                    <option>Mexico, Distrito Federal</option>
+                                    <option>Colombia,Medellín</option>
+                                    <option>Colombia,Bogota</option>
+                                    <option>Costa Rica</option>
+                                    <option>Madrid</option>
+                                    <option>Singapur</option>
+                                    <option>São Paulo (SAO)</option>
+                                    <option>Tokio</option>
+                                    <option>Venecia</option>
+                                    <option>Cancún</option>
+                                    <option>Barcelona</option>
+                                    <option>Toronto</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -95,8 +102,8 @@
                             <div class="form-group">
                                 <label for="Categoria">Categoria</label>
                                 <select class="form-control" name="Categoria">
-                                    <option>Clase económica</option>
-                                    <option>Clase ejecutiva</option>
+                                    <option>Económica</option>
+                                    <option>Ejecutiva</option>
                                     <option>Primera clase</option>
                                 </select>
                             </div>
@@ -122,7 +129,7 @@
             $.get( "http://localhost:2144//Vuelos.svc/Vuelos", function( data ) {
                 for (i = 0; i < data.length; i++) {
                     $(".result")
-                        .append('<div class="card my-1"><div class="card-header text-white bg-dark">Vuelo id: ' + data[i].Id +'</div><div class="card-body"><ul><li>Aerolinia: ' + data[i].Agencia +'</li><li>Origen: ' + data[i].Origen +' - Destino: ' + data[i].Destino +'</li><li>Categoria: ' + data[i].Categoria +'</li></ul><p>Precio: $' + data[i].Precio +'</p><br></div></div>')
+                        .append('<div class="card my-1"><div class="card-header text-white bg-dark">Vuelo id: ' + data[i].Id +'</div><div class="card-body hover"><ul><li>Aerolinia: ' + data[i].Agencia +'</li><li><i class="fas fa-plane-departure"></i> Origen: ' + data[i].Origen +' - <i class="fas fa-plane-arrival"></i> Destino: ' + data[i].Destino +'</li><li><i class="fas fa-money-bill"></i> Categoria: ' + data[i].Categoria +'</li></ul><p>Precio: $' + data[i].Precio +'</p><br></div></div>')
                 }
             })
         });

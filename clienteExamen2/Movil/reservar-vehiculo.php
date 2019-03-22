@@ -56,7 +56,7 @@ $( document ).ready(function() {
         var url = "http://localhost:2144/Carros.svc/Carros/" + id;
         $.get(url , function( data ) {
                 $(".result")
-                .append('<div><h2><i class="fas fa-car"></i> ' + data.Marca +'</h2><h2><i class="fas fa-plane-arrival"></i> ' + data.Destino+'</h2><p>' + data.Categoria +' - PRECIO:'+data.Precio+'</p><hr/><label for="text-basic">Fecha de vuelo:</label><input type="date" name="date" id="date" value=""><button class="ui-btn">Reservar</button></div>');
+                .append('<h4><i class="fas fa-car"></i> Marca: ' + data.Marca +'</h4><p>Modelo: ' + data.Modelo +'</p><p>Categoria: ' + data.Categoria +'</p><p><i class="fas fa-palette"></i> Color: ' + data.Color +'</p><p>Precio: $' + data.Precio +'</p><br><hr/><form action="/action_reservar_vehiculo.php" method="post" data-ajax="false"><input type="hidden" name="user" id="user" value="<?php echo $_SESSION['login_user']; ?>"><input type="hidden" name="reserva" id="reserva" value="carro'+ data.Id +'"><input type="hidden" name="total" id="total" value="'+ data.Precio    +'"><label for="text-basic">Fecha de reservación:</label><input type="date" name="date" id="date" value=""><label for="dias" class="select">Cantidad de dias</label><select name="dias" id="dias"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option></select><button class="ui-btn vuelo" type="submit">Reservar</button></form>');
         })
 });
 </script>

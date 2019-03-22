@@ -33,23 +33,27 @@
         </div>
     </div>
     <div data-role="panel" id="mypanel" class="gradient-hotel">
-        <label for="select-native-6" class="text-light">Origen:</label>
+        <label for="select-native-6" class="text-light">Ubicación:</label>
         <select name="select-native-6" id="select-native-6" data-mini="true">
-            <option>Colombia, Medellin</option>
-            <option value="medium">Two</option>
-            <option value="large">Three</option>
+            <option>Barranquilla</option>
+            <option>Busan</option>
+            <option>Cali</option>
+            <option>Guanacaste</option>
+            <option>Heredia</option>
+            <option>Madrid</option>
+            <option>Nueva York, a 0.5 millas de: Times Square</option>
+            <option>Perú</option>
+            <option>Puntarenas</option>
+            <option>Sabana</option>
+            <option>Singapore</option>
+            <option>Tamarindo</option>
         </select>
-        <label for="select-native-6" class="text-light">Destino:</label>
+        <label for="select-native-6" class="text-light">Tipo de habitación:</label>
         <select name="select-native-6" id="select-native-6" data-mini="true">
-            <option>Peru, Lima</option>
-            <option value="medium">Two</option>
-            <option value="large">Three</option>
-        </select>
-        <label for="select-native-6" class="text-light">Tipo de boleto:</label>
-        <select name="select-native-6" id="select-native-6" data-mini="true">
-            <option value="small">Primera clase</option>
-            <option value="medium">Two</option>
-            <option value="large">Three</option>
+            <option>Doble</option>
+            <option>Matrimonial</option>
+            <option>Sencilla</option>
+            <option>Suite</option>
         </select>
         <label for="submit-6" class="text-light">Buscar:</label>
         <a id="listar" class="ui-shadow ui-btn ui-corner-all">Buscar</a>
@@ -63,7 +67,7 @@
             console.log(data[0]);
             for (i = 0; i < data.length; i++) {
                 $(".result")
-                .append('<div><a data-ajax="false" href="reservar-hotel.php?id='+data[i].Id+'"><h2><i class="fas fa-hotel"></i> ' + data[i].Nombre +'</h2><h2><i class="fas fa-plane-arrival"></i> ' + data[i].Destino+'</h2><p>' + data[i].Categoria +' - PRECIO:'+data[i].Precio+'</p></a><hr/></div>');
+                .append('<div><a data-ajax="false" href="reservar-hotel.php?id='+data[i].Id+'"><h2><i class="fas fa-hotel"></i> ' + data[i].Nombre +'</h2><p><i class="fas fa-phone-square"></i> Telefono: ' + data[i].Telefono +'</p><p><i class="fas fa-location-arrow"></i> Ubicacion: ' + data[i].Ubicacion +'</p></p>PRECIO: $'+data[i].Precio+'</p></a><hr/></div>');
             }
         })
     });

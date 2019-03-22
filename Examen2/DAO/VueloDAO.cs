@@ -6,7 +6,7 @@ namespace Examen2.DAO
 {
     public class VueloDAO
     {
-        private string CadenaConexion = "Data Source=FIORELLA\\FIORELLASQL;Initial Catalog=Rentivel;Integrated Security=true;";
+        private string CadenaConexion = "Data Source=ALTESEIN\\SQLEXPRESS;Initial Catalog=Vuelos;Integrated Security=SSPI";
 
         public Vuelo Crear(Vuelo vueloACrear)
         {
@@ -112,7 +112,7 @@ namespace Examen2.DAO
                         while (resultado.Read())
                         {
                             vueloEncontrado = new Vuelo()
-                            {
+                            {  
                                 Id = (int)resultado["id"],
                                 Origen = (string)resultado["origen"],
                                 Destino = (string)resultado["destino"],
@@ -132,7 +132,7 @@ namespace Examen2.DAO
         {
             List<Vuelo> vuelosEncontrados = new List<Vuelo>();
             Vuelo vueloEncontrado = null;
-            string sql = "SELECT * FROM vuelos WHERE origen = @origen and categoria = @categoria ";
+            string sql = "SELECT * FROM vuelos WHERE destino = @origen and categoria = @categoria ";
             using (SqlConnection conexion = new SqlConnection(CadenaConexion))
             {
                 conexion.Open();

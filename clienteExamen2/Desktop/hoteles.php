@@ -17,6 +17,10 @@
             -o-background-size: cover;
             background-size: cover;
         }
+        .hover:hover {
+            background-image: linear-gradient(-30deg, #FF851B, #f75bd0) !important;
+            color:white;
+        }
     </style>
 </head>
 <body>
@@ -82,9 +86,10 @@
                             <div class="form-group">
                                 <label for="tipoHabitacion">Tipo de Habitacion</label>
                                 <select class="form-control" name="Categoria">
-                                    <option>Clase económica</option>
-                                    <option>Clase ejecutiva</option>
-                                    <option>Primera clase</option>
+                                    <option>Doble</option>
+                                    <option>Matrimonial</option>
+                                    <option>Sencilla</option>
+                                    <option>Suite</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -111,7 +116,7 @@
             $.get( "http://localhost:2144/Hoteles.svc/Hoteles", function( data ) {
                 for (i = 0; i < data.length; i++) {
                     $(".result")
-                        .append('<div class="card my-1"><div class="card-header text-white bg-dark">Hotel id: ' + data[i].Id +'</div><div class="card-body"><ul><li>Nombre: ' + data[i].Nombre +'</li><li>Telefono: ' + data[i].Telefono +' - Ubicacion: ' + data[i].Ubicacion +'</li><li>Tipo de Habitacion: ' + data[i].TipoHabitacion+'</li></ul><p>Precio: $' + data[i].Precio +'</p><br></div></div>')
+                        .append('<div class="card my-1"><div class="card-header text-white bg-dark">Hotel id: ' + data[i].Id +'</div><div class="card-body hover"><ul><li><i class="fas fa-hotel"></i> Nombre: ' + data[i].Nombre +'</li><li><i class="fas fa-phone-square"></i> Telefono: ' + data[i].Telefono +'</li><li><i class="fas fa-location-arrow"></i> Ubicacion: ' + data[i].Ubicacion +'</li><li>Tipo de Habitacion: ' + data[i].TipoHabitacion+'</li></ul><p>Precio: $' + data[i].Precio +'</p><br></div></div>')
                 }
             })
         });

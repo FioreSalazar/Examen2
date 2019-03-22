@@ -51,7 +51,60 @@
 
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col-5 my-2">
+                <div class="card" style="background-color:rgba(255, 255, 255, 0.9);">
+                    <div class="card-body">
+                    <?php
+                        $sql = "SELECT * FROM reservaciones ORDER BY fechaInicio;";
+                        $result = $db->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            echo '<h2><i class="fas fa-book-open"></i> Total de reservaciones '.$result->num_rows.'</h2>';
+
+                            while($row = $result->fetch_assoc()) {
+                                echo '<div class="card p-3 m-2">';
+                                echo "<h3>Fecha Inicio: " . $row["fechaInicio"]. "</h3>";
+                                $tipoServicio = preg_replace('/[^a-zA-Z]/', '', $row["reserva"]);
+                                if($tipoServicio == 'vuelo'){
+                                    echo '<i class="fas fa-plane fa-2x"></i><p>Tipo de servicio vuelo<hr>';
+                                }
+                                elseif($tipoServicio == 'hotel'){
+                                    echo '<i class="fas fa-hotel fa-2x"></i><p>Tipo de servicio hotel<hr>';
+                                }
+                                elseif($tipoServicio == 'carro'){
+                                    echo '<i class="fas fa-car-side fa-2x"></i><p>Tipo de servicio carro<hr>';
+                                }
+                                echo "<p>Total" . $row["total"]. "</p><hr>";
+                                echo '</div>';
+                            }
+                        } else {
+                            echo "0 results";
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <div class="col-7 my-2">
+                <div class="card" style="background-color:rgba(255, 255, 255, 0.9);">
+                    <div class="card-body">
+                    <?php
+                        $sql = "select count(*) as total, usuario_id, nombre, apellido from reservaciones left join usuarios u on reservaciones.usuario_id = u.correo group by usuario_id ;";
+                        $result = $db->query($sql);
+                        echo '<h2><i class="fas fa-users"></i> Total de usuarios '.$result->num_rows.'</h2>';
+
+                        if ($result->num_rows > 0) {
+                            while($row = $result->fetch_assoc()) {
+                                echo '<div class="card p-3 m-2">';
+                                echo "<h3>Nombre del usuario: " . $row["nombre"]. " ". $row["apellido"]."</h3>";
+                                echo "<h4>Correo: <a href='mailto:" . $row["usuario_id"]. "'>". $row["usuario_id"]."<a/></h4>";
+                                echo "<h5>Total de reservas " . $row["total"]. "</h5><hr>";
+                                echo '</div>';
+                            }
+                        }
+                        $db->close();
+                        ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

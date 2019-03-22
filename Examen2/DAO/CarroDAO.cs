@@ -6,7 +6,7 @@ namespace Examen2.DAO
 {
     public class CarroDAO
     {
-        private string CadenaConexion = "Data Source=FIORELLA\\FIORELLASQL;Initial Catalog=Rentivel;Integrated Security=true;";
+        private string CadenaConexion = "Data Source=ALTESEIN\\SQLEXPRESS;Initial Catalog=Carros;Integrated Security=SSPI";
 
         public Carro Crear(Carro carroACrear)
         {

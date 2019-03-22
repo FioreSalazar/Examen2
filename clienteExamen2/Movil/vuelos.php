@@ -35,21 +35,27 @@
     <div data-role="panel" id="mypanel" class="gradient-vuelo">
         <label for="select-native-6" class="text-light">Origen:</label>
         <select name="select-native-6" id="select-native-6" data-mini="true">
-            <option>Colombia, Medellin</option>
-            <option value="medium">Two</option>
-            <option value="large">Three</option>
+            <option>Costa Rica</option>
         </select>
         <label for="select-native-6" class="text-light">Destino:</label>
         <select name="select-native-6" id="select-native-6" data-mini="true">
-            <option>Peru, Lima</option>
-            <option value="medium">Two</option>
-            <option value="large">Three</option>
+            <option>Colombia,Medellín</option>
+            <option>Colombia,Bogota</option>
+            <option>Costa Rica</option>
+            <option>Madrid</option>
+            <option>Singapur</option>
+            <option>São Paulo (SAO)</option>
+            <option>Tokio</option>
+            <option>Venecia</option>
+            <option>Cancún</option>
+            <option>Barcelona</option>
+            <option>Toronto</option>
         </select>
         <label for="select-native-6" class="text-light">Tipo de boleto:</label>
         <select name="select-native-6" id="select-native-6" data-mini="true">
-            <option value="small">Primera clase</option>
-            <option value="medium">Two</option>
-            <option value="large">Three</option>
+            <option>Económica</option>
+            <option>Ejecutiva</option>
+            <option>Primera clase</option>
         </select>
         <label for="submit-6" class="text-light">Buscar:</label>
         <a id="listar" class="ui-shadow ui-btn ui-corner-all">Buscar</a>
@@ -63,7 +69,7 @@
             console.log(data);
             for (i = 0; i < data.length; i++) {
                 $(".result")
-                .append('<div><a data-ajax="false" href="reservar-vuleo.php?id='+data[i].Id+'"><h2><i class="fas fa-plane-departure"></i> ' + data[i].Origen +'</h2><h2><i class="fas fa-plane-arrival"></i> ' + data[i].Destino+'</h2><p>' + data[i].Categoria +' - PRECIO:'+data[i].Precio+'</p></a><hr/></div>');
+                .append('<div><a data-ajax="false" href="reservar-vuleo.php?id='+data[i].Id+'"><h2><i class="fas fa-plane-departure"></i> ' + data[i].Origen +'</h2><h2><i class="fas fa-plane-arrival"></i> ' + data[i].Destino+'</h2><p>' + data[i].Categoria +'</p><p>PRECIO $:'+data[i].Precio+'</p></a><hr/></div>');
             }
         })
     });

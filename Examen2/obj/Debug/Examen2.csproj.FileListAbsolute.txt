@@ -1,23 +1,12 @@
-c:\users\fiorella salazar\source\repos\Examen2\Examen2\bin\Examen2.dll.config
-c:\users\fiorella salazar\source\repos\Examen2\Examen2\bin\Examen2.dll
-c:\users\fiorella salazar\source\repos\Examen2\Examen2\bin\Examen2.pdb
-c:\users\fiorella salazar\source\repos\Examen2\Examen2\obj\Debug\Examen2.csproj.CoreCompileInputs.cache
-c:\users\fiorella salazar\source\repos\Examen2\Examen2\obj\Debug\Examen2.dll
-c:\users\fiorella salazar\source\repos\Examen2\Examen2\obj\Debug\Examen2.pdb
-C:\Users\Alejandro\Desktop\Examen2-master\Examen2\bin\Examen2.dll.config
-C:\Users\Alejandro\Desktop\Examen2-master\Examen2\bin\Examen2.dll
-C:\Users\Alejandro\Desktop\Examen2-master\Examen2\bin\Examen2.pdb
-C:\Users\Alejandro\Desktop\Examen2-master\Examen2\obj\Debug\Examen2.csproj.CoreCompileInputs.cache
-C:\Users\Alejandro\Desktop\Examen2-master\Examen2\obj\Debug\Examen2.dll
-C:\Users\Alejandro\Desktop\Examen2-master\Examen2\obj\Debug\Examen2.pdb
-C:\Users\fiorella salazar\source\repos\Examen2\Examen2\obj\Debug\Examen2.csprojResolveAssemblyReference.cache
-<<<<<<< HEAD
 C:\Users\i_fel\source\repos\Examen2\Examen2\bin\Examen2.dll.config
 C:\Users\i_fel\source\repos\Examen2\Examen2\bin\Examen2.dll
 C:\Users\i_fel\source\repos\Examen2\Examen2\bin\Examen2.pdb
+C:\Users\i_fel\source\repos\Examen2\Examen2\bin\EntityFramework.dll
+C:\Users\i_fel\source\repos\Examen2\Examen2\bin\EntityFramework.SqlServer.dll
+C:\Users\i_fel\source\repos\Examen2\Examen2\bin\EntityFramework.xml
+C:\Users\i_fel\source\repos\Examen2\Examen2\bin\EntityFramework.SqlServer.xml
 C:\Users\i_fel\source\repos\Examen2\Examen2\obj\Debug\Examen2.csproj.CoreCompileInputs.cache
+C:\Users\i_fel\source\repos\Examen2\Examen2\obj\Debug\Examen2.csproj.CopyComplete
 C:\Users\i_fel\source\repos\Examen2\Examen2\obj\Debug\Examen2.dll
 C:\Users\i_fel\source\repos\Examen2\Examen2\obj\Debug\Examen2.pdb
 C:\Users\i_fel\source\repos\Examen2\Examen2\obj\Debug\Examen2.csprojAssemblyReference.cache
-=======
->>>>>>> e4bdfdd7efac0e044ced116981442bafd2be040a

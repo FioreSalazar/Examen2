@@ -12,14 +12,29 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-<div data-role="page">
+<div data-role="page"class="gradient">
     <div data-role="header" class="gris">
-        <h1>Registro nuevo</h1>
+        <h1>Registro</h1>
     </div>
 
     <div role="main" class="ui-content">
-        <h3>Registro form</h3>
-    </div><!-- /content -->
+       <center><img src="/img/rentivel.png" height="100" width="auto"></center><br>
+         <form data-ajax="false" action="action_registro.php" method="post">
+             <label for="cedula">Cedula</label>
+            <input type="number" name="cedula" id="cedula" value="">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" value="">
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido" id="apellido" value="">
+            <label for="telefono">Teléfono</label>
+            <input type="number" name="telefono" id="telefono" value="">
+            <label for="correo">Correo</label>
+            <input type="email" name="correo" id="correo" value="">
+            <label for="clave">Clave</label>
+            <input type="password" name="clave" id="clave" value=""><br>
+            <button type="submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Registrarse</button>
+        </form>
+    </div>
 
     <div data-role="footer" data-position="fixed">
         <div data-role="navbar">

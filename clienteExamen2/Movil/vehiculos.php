@@ -33,23 +33,24 @@
         </div>
     </div>
     <div data-role="panel" id="mypanel" class="gradient-vehiculo">
-        <label for="select-native-6" class="text-light">Origen:</label>
+        <label for="select-native-6" class="text-light">Marca:</label>
         <select name="select-native-6" id="select-native-6" data-mini="true">
-            <option>Colombia, Medellin</option>
-            <option value="medium">Two</option>
-            <option value="large">Three</option>
+            <option>Abarth</option>
+            <option>CHEVROLET</option>
+            <option>CITROEN</option>
+            <option>FORD</option>
+            <option>HONDA</option>
+            <option>HYUNDAI</option>
+            <option>LAMBORGHINI</option>
+            <option>Nissan</option>
+            <option>Toyota</option>
         </select>
-        <label for="select-native-6" class="text-light">Destino:</label>
+        <label for="select-native-6" class="text-light">Categoria:</label>
         <select name="select-native-6" id="select-native-6" data-mini="true">
-            <option>Peru, Lima</option>
-            <option value="medium">Two</option>
-            <option value="large">Three</option>
-        </select>
-        <label for="select-native-6" class="text-light">Tipo de boleto:</label>
-        <select name="select-native-6" id="select-native-6" data-mini="true">
-            <option value="small">Primera clase</option>
-            <option value="medium">Two</option>
-            <option value="large">Three</option>
+            <option style="background-color:blue;color:white;">Azul</option>
+            <option style="background-color:white;color:black;">Blanco</option>
+            <option style="background-color:black;;color:white;">Negro</option>
+            <option style="background-color:red;;color:white;">Rojo</option>
         </select>
         <label for="submit-6" class="text-light">Buscar:</label>
         <a id="listar" class="ui-shadow ui-btn ui-corner-all">Buscar</a>
@@ -63,7 +64,7 @@
             console.log(data[0]);
             for (i = 0; i < data.length; i++) {
                 $(".result")
-                .append('<div><a data-ajax="false" href="reservar-vehiculo.php?id='+data[i].Id+'"><h2><i class="fas fa-car"></i> ' + data[i].Marca +'</h2><h2><i class="fas fa-plane-arrival"></i> ' + data[i].Destino+'</h2><p>' + data[i].Categoria +' - PRECIO:'+data[i].Precio+'</p></a><hr/></div>');
+                .append('<div><a data-ajax="false" href="reservar-vehiculo.php?id='+data[i].Id+'"><p><i class="fas fa-car"></i> Marca: ' + data[i].Marca +'</p><p>Modelo: ' + data[i].Modelo +'</p><p><i class="fas fa-palette"></i> Color: ' + data[i].Color +'</p><p>$'+data[i].Precio+' al día.</p></a><hr/></div>');
             }
         })
     });

@@ -56,7 +56,8 @@ $( document ).ready(function() {
         var url = "http://localhost:2144/Hoteles.svc/Hoteles/" + id;
         $.get(url , function( data ) {
                 $(".result")
-                .append('<div><h2><i class="fas fa-hotel"></i> ' + data.Nombre +'</h2><h2><i class="fas fa-plane-arrival"></i> ' + data.Destino+'</h2><p>' + data.Categoria +' - PRECIO:'+data.Precio+'</p><hr/><label for="text-basic">Fecha de vuelo:</label><input type="date" name="date" id="date" value=""><button class="ui-btn">Reservar</button></div>');
+                .append('<h4><i class="fas fa-hotel"></i> Nombre: ' + data.Nombre +'</h4><p><i class="fas fa-phone-square"></i> Telefono: ' + data.Telefono +'</p><p><i class="fas fa-location-arrow"></i> Ubicacion: ' + data.Ubicacion +'</p><p>Tipo de Habitacion: ' + data.TipoHabitacion+'</p><p>Precio: $' + data.Precio +'</p><br><hr/><form action="/action_reservar_hotel.php" method="post" data-ajax="false"><input type="hidden" name="user" id="user" value="<?php echo $_SESSION['login_user']; ?>"><input type="hidden" name="reserva" id="reserva" value="hotel'+ data.Id    +'"><input type="hidden" name="total" id="total" value="'+ data.Precio    +'"><label for="text-basic">Fecha de reservación:</label><input type="date" name="date" id="date" value=""><label for="dias" class="select">Cantidad de dias</label><select name="dias" id="dias"><option value="7">Una semana: 7 dias</option><option value="3">Estadia corta: 3 dias</option><option value="2">Express: 1 dia 1 noche</option><option value="1">Una noche</option></select><button class="ui-btn vuelo" type="submit">Reservar</button></form>');
+
         })
 });
 </script>

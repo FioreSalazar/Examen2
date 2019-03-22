@@ -18,6 +18,10 @@
             -o-background-size: cover;
             background-size: cover;
         }
+        .hover:hover {
+            background-image: linear-gradient(-30deg, #28B62C, #f75bd0) !important;
+            color:white;
+        }
     </style>
 </head>
 <body>
@@ -71,22 +75,20 @@
                             <div class="form-group">
                                 <label for="Marca">Marca</label>
                                 <select class="form-control" name="Marca">
-                                    <option>Lamborghini</option>
-                                    <option>BMW</option>
-                                    <option>Land Rover</option>
-                                    <option>Ferrari</option>
-                                    <option>Audi</option>
+                                    <option>Abarth</option>
+                                    <option>CHEVROLET</option>
+                                    <option>CITROEN</option>
+                                    <option>FORD</option>
+                                    <option>HONDA</option>
+                                    <option>HYUNDAI</option>
+                                    <option>LAMBORGHINI</option>
+                                    <option>Nissan</option>
+                                    <option>Toyota</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="Modelo">Modelo</label>
-                                <select class="form-control" name="Modelo">
-                                    <option>X5</option>
-                                    <option>Ni idea</option>
-                                    <option>Ni idea</option>
-                                    <option>Ni idea</option>
-                                    <option>Ni idea</option>
-                                </select>
+                                <input type="text" class="form-control" name="Modelo">
                             </div>
                             <div class="form-group">
                                 <label for="Categoria">Categoria</label>
@@ -95,9 +97,10 @@
                             <div class="form-group">
                                 <label for="Color">Color</label>
                                 <select class="form-control" name="Color">
-                                    <option>Rojo</option>
-                                    <option>Azul</option>
-                                    <option>Negro</option>
+                                    <option style="background-color:blue;color:white;">Azul</option>
+                                    <option style="background-color:white;color:black;">Blanco</option>
+                                    <option style="background-color:black;;color:white;">Negro</option>
+                                    <option style="background-color:red;;color:white;">Rojo</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -123,7 +126,7 @@
             $.get( "http://localhost:2144/Carros.svc/Carros", function( data ) {
                 for (i = 0; i < data.length; i++) {
                     $(".result")
-                        .append('<div class="card my-1"><div class="card-header text-white bg-dark">Vehiculo id: ' + data[i].Id +'</div><div class="card-body"><ul><li>Marca: ' + data[i].Marca +'</li><li>Modelo: ' + data[i].Modelo +' - Categoria: ' + data[i].Categoria +'</li><li>Color: ' + data[i].Color +'</li></ul><p>Precio: $' + data[i].Precio +'</p><br></div></div>')
+                        .append('<div class="card my-1"><div class="card-header text-white bg-dark">Vehiculo id: ' + data[i].Id +'</div><div class="card-body hover"><ul><li><i class="fas fa-car"></i> Marca: ' + data[i].Marca +'</li><li>Modelo: ' + data[i].Modelo +'</li><li>Categoria: ' + data[i].Categoria +'</li><li><i class="fas fa-palette"></i> Color: ' + data[i].Color +'</li></ul><p>Precio: $' + data[i].Precio +'</p><br></div></div>')
                 }
             })
         });
