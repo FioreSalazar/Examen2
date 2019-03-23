@@ -20,7 +20,10 @@
 
          header("location: reportes.php");
       }else {
-         $error = "Fallo en las credenciales";
+         if(session_destroy()) {
+            header("location: index.php");
+            $error = "Fallo en las credenciales";
+         }
       }
    }
 ?>

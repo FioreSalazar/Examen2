@@ -53,9 +53,9 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-4 offset-1 ">
                 <div class="card text-white my-3" style="background-color:rgba(255, 255, 255, 0.8);">
                     <div class="card-header bg-primary">
                         <h5>Lista de vuelos</h5>
@@ -66,8 +66,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-5">
-                <div class="card text-white my-3 position-fixed" style="background-color:rgba(255, 255, 255, 0.8);">
+            <div class="col-md-6 my-2">
+                <div class="card text-white my-3" style="background-color:rgba(255, 255, 255, 0.8);">
                     <div class="card-header bg-primary"><h5>Ingreso de vuelos</h5></div>
                     <div class="card-body text-dark">
                         <p class="card-title">Ingresar los campos para crear una nueva oferta de vuelo.</p>

@@ -22,9 +22,10 @@
 
     <div role="main" class="ui-content">
         <h3>Reservas de la base de datos</h3>
+        <hr>
         <?php
 
-            $sql = "SELECT fechaInicio, reserva, total FROM reservaciones WHERE usuario_id ='" . $_SESSION['login_user']."'";
+            $sql = "SELECT fechaInicio, reserva, total FROM reservaciones WHERE usuario_id ='" . $_SESSION['login_user']."' ORDER BY fechaInicio;";
             $result = $db->query($sql);
                 if($result) {
                     if ($result->num_rows > 0) {
@@ -35,10 +36,10 @@
                             if($tipoServicio == 'vuelo'){
                                 echo '<a data-ajax="false" href="reservar-vuleo.php?id='.preg_replace('/[^0-9,.]+/i', '', $row["reserva"]).'">Ver detalles del Vuelo</a>';
                             }
-                            elseif($tipoServicio == 'hotel'){
+                            if($tipoServicio == 'hotel'){
                                 echo '<a data-ajax="false" href="reservar-hotel.php?id='.preg_replace('/[^0-9,.]+/i', '', $row["reserva"]).'">Ver detalles del Hotel</a>';
                             }
-                            elseif($tipoServicio == 'carro'){
+                            if($tipoServicio == 'carro'){
                                 echo '<a data-ajax="false" href="reservar-vehiculo.php?id='.preg_replace('/[^0-9,.]+/i', '', $row["reserva"]).'">Ver detalles del Vehiculo</a>';
                             }
                             echo "<p>Total" . $row["total"]. "</p><hr>";
@@ -46,17 +47,6 @@
                 }
             }
             $db->close();
-            /*
-
-                    if(preg_replace('/[^a-zA-Z]/', '', $row["reserva"]) == "vuelo") {
-                        echo '<a href="reservar-vuleo.php?id='+preg_replace('/[^0-9,.]+/i', '',$row["reserva"])+'">Ver detalles del Hotel</a>';
-                    }
-                    if(preg_replace('/[^a-zA-Z]/', '', $row["reserva"]) == "hotel") {
-                        echo '<a href="reservar-hotel.php?id='+preg_replace('/[^0-9,.]+/i', '',$row["reserva"])+'">Ver detalles del Hotel</a>';
-                    }
-                    if(preg_replace('/[^a-zA-Z]/', '', $row["reserva"]) == "carro") {
-                        echo '<a href="reservar-vehiculo.php?id='+preg_replace('/[^0-
-            */
         ?>
     </div><!-- /content -->
 

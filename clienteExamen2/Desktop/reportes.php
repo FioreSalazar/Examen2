@@ -18,6 +18,10 @@
             -o-background-size: cover;
             background-size: cover;
         }
+        .hover:hover {
+            background-image: linear-gradient(-50deg, #adbada, #000) !important;
+            color:#feffe1;
+        }
     </style>
 </head>
 <body>
@@ -49,33 +53,36 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-5 my-2">
+            <div class="col-md-4 offset-1 my-2">
                 <div class="card" style="background-color:rgba(255, 255, 255, 0.9);">
                     <div class="card-body">
                     <?php
-                        $sql = "SELECT * FROM reservaciones ORDER BY fechaInicio;";
+                        $sql = "SELECT * FROM reservaciones LEFT JOIN usuarios u ON reservaciones.usuario_id = u.correo ORDER BY fechaInicio;";
                         $result = $db->query($sql);
 
                         if ($result->num_rows > 0) {
                             echo '<h2><i class="fas fa-book-open"></i> Total de reservaciones '.$result->num_rows.'</h2>';
 
                             while($row = $result->fetch_assoc()) {
-                                echo '<div class="card p-3 m-2">';
+                                echo '<div class="card p-3 m-2 hover"><div class="card-body">';
                                 echo "<h3>Fecha Inicio: " . $row["fechaInicio"]. "</h3>";
                                 $tipoServicio = preg_replace('/[^a-zA-Z]/', '', $row["reserva"]);
                                 if($tipoServicio == 'vuelo'){
-                                    echo '<i class="fas fa-plane fa-2x"></i><p>Tipo de servicio vuelo<hr>';
+                                    echo '<p class="text-center"><i class="fas fa-plane fa-2x"></i> Tipo de servicio vuelo</p><hr>';
                                 }
                                 elseif($tipoServicio == 'hotel'){
-                                    echo '<i class="fas fa-hotel fa-2x"></i><p>Tipo de servicio hotel<hr>';
+                                    echo '<p class="text-center"><i class="fas fa-hotel fa-2x"></i> Tipo de servicio hotel</p><hr>';
                                 }
                                 elseif($tipoServicio == 'carro'){
-                                    echo '<i class="fas fa-car-side fa-2x"></i><p>Tipo de servicio carro<hr>';
+                                    echo '<p class="text-center"><i class="fas fa-car-side fa-2x"></i> Tipo de servicio vehiculo</p><hr>';
                                 }
+                                echo "<h5>Nombre: " . $row["nombre"]. " ". $row["apellido"]."</h5>";
+                                echo "<ul><li><i class='far fa-id-card'></i> " . $row["cedula"]."</li>";
+                                echo "<li><a href='tel:".$row["telefono"]."'><i class='fas fa-mobile-alt'></i> " . $row["telefono"]."</a></li></ul>";
                                 echo "<p>Total" . $row["total"]. "</p><hr>";
-                                echo '</div>';
+                                echo '</div></div>';
                             }
                         } else {
                             echo "0 results";
@@ -84,7 +91,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-7 my-2">
+            <div class="col-md-6 my-2">
                 <div class="card" style="background-color:rgba(255, 255, 255, 0.9);">
                     <div class="card-body">
                     <?php

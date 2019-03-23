@@ -1,11 +1,4 @@
-<?php
-    session_start();
-    if(isset($_SESSION['login_user'])){
-        header("location:reservaciones.php");
-        die();
-    }
 
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,25 +13,13 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-<div data-role="page" class="gradient">
+<div data-role="page">
     <div data-role="header" class="gris">
-        <h1>Rentivel - Inicio</h1>
+        <h1>Cargando <i class="fas fa-spinner fa-spin"></i></h1>
     </div>
 
     <div role="main" class="ui-content">
-        <h3>Inicio de sesion</h3>
-        <center>
-        <img src="/img/rentivel.png" height="100" width="auto">
-        </center>
-        <form data-ajax="false" action="action_login.php" method="post">
-            <label for="correo">Correo</label>
-            <input type="text" name="correo" id="correo" value="">
-            <label for="clave">Clave</label>
-            <input type="password" name="clave" id="clave" value="">
-            <button type="submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Enviar</button>
-        </form>
-        <p class="mc-top-margin-1-5"><a href="registrarse.php" class="text-dark">Registrarse</a></p>
-        <p class="mc-top-margin-1-5"><a href="acerca-de.php" class="text-dark">Acerca de rentivel</a></p>
+       <center><img src="/img/rentivel.png" height="200" width="auto"></center><br>
     </div><!-- /content -->
 
     <div data-role="footer" data-position="fixed">
@@ -52,5 +33,6 @@
         </div>
     </div>
 </div>
+<form action="/action_reservar_vuelo.php"></form>
 </body>
 </html>
